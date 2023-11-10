@@ -1,0 +1,12 @@
+en:
+  navbar:
+    shop-name: Severyanochka
+    cart: Cart
+  product:
+    new:
+      btn: Add product
+    show:
+      number: №
+      product: Product name
+      category: Category
+      count: Quantity of product

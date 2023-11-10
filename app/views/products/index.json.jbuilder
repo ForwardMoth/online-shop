@@ -1,0 +1,1 @@
+json.array! @fire_extinguishers, partial: "fire_extinguishers/fire_extinguisher", as: :fire_extinguisher

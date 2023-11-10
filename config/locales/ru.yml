@@ -1,0 +1,12 @@
+ru:
+  navbar:
+    shop-name: Северяночка
+    cart: Корзина
+  product:
+    new:
+      btn: Добавить товар
+    show:
+      number: №
+      product: Название товара
+      category: Категория
+      count: Количество товара

@@ -1,0 +1,11 @@
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <% @products.in_groups(3, false) do |products| %>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6">
+                <% products.each do |product| %>
+                    <%= render 'products/card', product: product %>
+                <% end %>
+            </div>
+        <% end%>
+    </div>
+</div>

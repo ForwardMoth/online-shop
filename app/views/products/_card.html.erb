@@ -1,0 +1,24 @@
+<div class="col">
+    <div class="card shadow-sm bg-light mb-5">
+        <a href="/" class="d-flex align-items-center text-white text-decoration-none"> 
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#3b444b"></rect>
+                <text class="fs-3" x="50%" y="50%" fill="#eceeef" text-anchor="middle"><%= product.category %></text>
+            </svg>
+        </a>
+        <div class="card-body">
+        <p class="card-text fs-6 fw-bold"><%= product.name %></p>
+            <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <%= link_to t('product.new.btn'), orders_add_path(user_id: @user.id, product_id: product.id), 
+                            class: 'btn btn-sm btn-outline-success fw-bold' %>
+                    </div>
+                </a>
+                <small class="text-body-secondary"><%= Money.new(product.price.to_money).format %></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+
