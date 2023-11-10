@@ -10,3 +10,5 @@ en:
       product: Product name
       category: Category
       count: Quantity of product
+    destroy:
+      btn: Delete

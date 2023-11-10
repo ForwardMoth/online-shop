@@ -11,7 +11,8 @@
         <p class="card-text fs-6 fw-bold"><%= product.name %></p>
             <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <%= link_to t('product.new.btn'), orders_add_path(user_id: @user.id, product_id: product.id), 
+                        <%= link_to t('product.new.btn'), orders_path(order_id: @order.id, product_id: product.id), 
+                            data: { turbo_method: :post },
                             class: 'btn btn-sm btn-outline-success fw-bold' %>
                     </div>
                 </a>

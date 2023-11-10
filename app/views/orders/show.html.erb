@@ -1,0 +1,51 @@
+<div class="album py-5">
+    <div class="container">
+        <h1><%= t('navbar.cart')%></h1>
+        <hr class="mt-2 mb-4">
+        <div class="table-responsive-lg"> 
+             <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr class="table-dark align-middle fs-3">
+                        <th scope="col" class="text-start"> <%= t('product.show.number')%></th>
+                        <th scope="col" class="text-center" ><%= t('product.show.product')%></th>
+                        <th scope="col" class="text-center"><%= t('product.show.category')%></th>
+                        <th scope="col" class="text-center"><%= t('product.show.count')%></th>
+                        <th scope="col" class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @products.each_with_index do |product, i| %>
+                        <tr data-tagle>
+                            <th scope="row" class="col-md-1 align-middle"><%= i + 1 %></th>
+                            <td class="col-md-4 text-center"><%= product.name %></td>
+                            <td class="col-md-4 text-center"><%= product.category %></td>
+                            <td class="col-md-2 text-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <%= link_to order_path(@order, product_id: product.id, change_quatity: 'remove'), 
+                                        data: { turbo_method: :patch }, class: "btn btn-secondary" do %>
+                                        <i class="bi bi-dash"></i>
+                                    <% end %>
+                                    <%= count_products(product) %>
+                                    <%= link_to order_path(@order, product_id: product.id, change_quatity: 'add'), 
+                                        data: { turbo_method: :patch }, class: "btn btn-secondary" do %>
+                                        <i class="bi bi-plus"></i>
+                                    <% end %>
+                                </div>
+                            </td>
+                            <td class="col-md-1 text-center">
+                                <%= link_to t('product.destroy.btn'), order_path(@order, product_id: product.id), 
+                                    data: { turbo_method: :delete, turbo_confirm: 'Вы уверены?' },
+                                    class: 'btn btn-sm btn-outline-dark fw-bold' %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <hr class="mt-4 mb-2">
+        <div class="d-flex justify-content-between">
+            <p class="fs-2"> <%= t('product.show.sum')%></p>
+            <p class="fs-2 fw-bolder text-md-end" style="padding-left:40px"><%= price(@products) %></p> 
+        </div>
+    </div>
+</div>

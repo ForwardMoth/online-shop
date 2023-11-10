@@ -5,8 +5,13 @@ ru:
   product:
     new:
       btn: Добавить товар
+      flash: Товар добавлен в корзину
     show:
       number: №
       product: Название товара
       category: Категория
       count: Количество товара
+      sum: 'Сумма заказа составляет:'
+    destroy:
+      btn: Удалить
+      flash: Товар удалён из корзины
