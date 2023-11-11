@@ -27,7 +27,7 @@ Product.destroy_all
 
 Product.create([
     {
-        name: 'Лаптоп',
+        name: 'Ноутбук',
         category: 'Электроника',
         price: 60000
     },
